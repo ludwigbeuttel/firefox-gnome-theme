@@ -20,8 +20,10 @@ from urllib.parse import quote
 ABS_PATH = os.path.dirname(os.path.abspath(__file__))
 ICONS_FILE = os.path.join(ABS_PATH, "icons.yml")
 CSS_FILE = os.path.join(ABS_PATH, "icons.css")
-ICONS_REPO_URL = "https://gitlab.gnome.org/GNOME/adwaita-icon-theme.git"
-ICONS_REPO_PATH = os.path.join(ABS_PATH, "adwaita-icon-theme")
+ICONS_REPO_URL_ADW = "https://gitlab.gnome.org/GNOME/adwaita-icon-theme.git"
+ICONS_REPO_URL_PAP = "https://github.com/PapirusDevelopmentTeam/papirus-icon-theme.git"
+ICONS_REPO_PATH_ADW = os.path.join(ABS_PATH, "adwaita-icon-theme")
+ICONS_REPO_PATH_PAP = os.path.join(ABS_PATH, "papirus-icon-theme")
 ICONS_KIT_REPO_URL = "https://gitlab.gnome.org/Teams/Design/icon-development-kit-www.git"
 ICONS_KIT_REPO_PATH = os.path.join(ABS_PATH, "icon-development-kit-www")
 
@@ -32,15 +34,25 @@ class IconsDefinition(TypedDict):
 
 def main():
     # Get icons repositories
-    if not os.path.exists(ICONS_REPO_PATH):
-        subprocess.call(["git", "clone", "--depth", "1", ICONS_REPO_URL], cwd=ABS_PATH)
+    if not os.path.exists(ICONS_REPO_PATH_ADW):
+        subprocess.call(["git", "clone", "--depth", "1", ICONS_REPO_URL_ADW], cwd=ABS_PATH)
+    if not os.path.exists(ICONS_REPO_PATH_PAP):
+        subprocess.call(["git", "clone", "--depth", "1", ICONS_REPO_URL_PAP], cwd=ABS_PATH)
     if not os.path.exists(ICONS_KIT_REPO_PATH):
         subprocess.call(["git", "clone", "--depth", "1", ICONS_KIT_REPO_URL], cwd=ABS_PATH)
 
     # Get icons name to path mappings
     icon_paths = {
         **lookup_icons(f"{ICONS_KIT_REPO_PATH}/img/symbolic"),  # Extra GNOME icons kit
-        **lookup_icons(f"{ICONS_REPO_PATH}/Adwaita/symbolic"),  # Core GNOME icons
+        **lookup_icons(f"{ICONS_REPO_PATH_ADW}/Adwaita/symbolic"),  # Core GNOME icons
+        **lookup_icons(f"{ICONS_REPO_PATH_PAP}/Papirus/16x16/symbolic"),
+        **lookup_icons(f"{ICONS_REPO_PATH_PAP}/Papirus/22x22/symbolic"),
+        **lookup_icons(f"{ICONS_REPO_PATH_PAP}/Papirus/24x24/symbolic"),
+        **lookup_icons(f"{ICONS_REPO_PATH_PAP}/Papirus/32x32/symbolic"),
+        **lookup_icons(f"{ICONS_REPO_PATH_PAP}/Papirus-Dark/16x16/symbolic"),
+        **lookup_icons(f"{ICONS_REPO_PATH_PAP}/Papirus-Dark/22x22/symbolic"),
+        **lookup_icons(f"{ICONS_REPO_PATH_PAP}/Papirus-Dark/24x24/symbolic"),
+        **lookup_icons(f"{ICONS_REPO_PATH_PAP}/Papirus-Dark/32x32/symbolic"),
         **lookup_icons(f"{ABS_PATH}/custom", False)  # Custom icons
     }
 
@@ -67,7 +79,8 @@ def main():
         css.write("}")
 
     # Remove repos dirs
-    shutil.rmtree(ICONS_REPO_PATH)
+    shutil.rmtree(ICONS_REPO_PATH_ADW)
+    shutil.rmtree(ICONS_REPO_PATH_PAP)
     shutil.rmtree(ICONS_KIT_REPO_PATH)
 
 def lookup_icons(icons_folder: str, has_subdirs = True) -> dict[str, str]:
