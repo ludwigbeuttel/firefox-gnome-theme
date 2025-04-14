@@ -1,0 +1,10 @@
+/* @import url("popup-search.css"); */
+/* @import url("tab-center-reborn-overrides.css"); */
+/* @import url("userchrome-toggle.css"); */
+@import url("icons.css");
+@import url("dynamic-colors.css");
+@import url("vertical-tabs.css");
+
+* {
+  font-family: "Inter Variable", "Inter", sans-serif !important;
+}
