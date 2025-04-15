@@ -1,4 +1,4 @@
-@media screen and (-moz-bool-pref: "gnomeTheme.extensions.tabCenterReborn") {
+@media screen and (-moz-pref("gnomeTheme.extensions.tabCenterReborn")) {
   /* only hide browsertabs is tabcenter is actuall in use */
   #tabbrowser-tabs {
     display: block !important;
@@ -37,7 +37,7 @@
   }
 
   /* enable support for userchrome extension */
-  @media not (-moz-bool-pref: "gnomeTheme.extensions.tabCenterReborn.alwaysOpen") {
+  @media not (-moz-pref: "gnomeTheme.extensions.tabCenterReborn.alwaysOpen") {
     #main-window[titlepreface*="​"] {
       /* apply stles from the original theme/extensions/tab-center-reborn.css */
       #sidebar-box[sidebarcommand*="tabcenter"] #sidebar,
