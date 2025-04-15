@@ -215,9 +215,6 @@ user_pref("layout.word_select.eat_space_to_next_word", false);
 // PREF: re-enable search suggestions
 user_pref("browser.search.suggest.enabled", true);
 
-// PREF: disable Firefox Sync
-user_pref("identity.fxaccounts.enabled", false);
-
 // PREF: disable the Firefox View tour from popping up
 user_pref("browser.firefox-view.feature-tour", "{\"screen\":\"\",\"complete\":true}");
 
@@ -342,4 +339,3 @@ user_pref("gnomeTheme.hideSingleTab", true);
 user_pref("gnomeTheme.systemIcons", true);
 user_pref("sidebar.revamp", true);
 user_pref("sidebar.verticalTabs", true);
-user_pref("privacy.resistFingerprinting", true);
