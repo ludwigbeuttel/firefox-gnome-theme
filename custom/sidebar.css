@@ -51,7 +51,7 @@
     max-width: var(--sidebar-width) !important;
     width: var(--sidebar-width) !important;
     transition-property: position, background-color, min-width, max-width, width !important;
-    transition-duration: 0.1s, var(--lwt-transition-duration),
+    transition-duration: 0.1s, var(--gnome-animation-time),
       var(--sidebar-transition-duration) !important;
     transition-timing-function: linear, var(--lwt-transition-type),
       var(--sidebar-transition-type) !important;
@@ -70,7 +70,7 @@
       border-top-left-radius: 6px;
       box-shadow: -5px 0 0 0 var(--lwt-accent-color);
       transition-property: box-shadow, border-radius, left, right !important;
-      transition-duration: var(--lwt-transition-duration),
+      transition-duration: var(--gnome-animation-time),
         var(--sidebar-transition-duration) !important;
       transition-timing-function: var(--lwt-transition-type),
         var(--sidebar-transition-type) !important;

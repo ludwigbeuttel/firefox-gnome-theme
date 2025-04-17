@@ -8,3 +8,7 @@
 * {
   font-family: "Inter Variable", "Inter", sans-serif !important;
 }
+
+.titlebar-buttonbox-container {
+  display: none;
+}

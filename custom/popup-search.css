@@ -26,7 +26,7 @@
   
     transition: unset !important;
     transition-property: background-color, top, opacity, border-radius, transform, padding, height, width !important;
-    transition-duration: var(--lwt-transition-duration), var(--popup-search-transition-duration) !important;
+    transition-duration: var(--gnome-animation-time), var(--popup-search-transition-duration) !important;
     transition-timing-function: var(--lwt-transition-type), var(--popup-search-transition-type) !important;
   }
   

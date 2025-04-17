@@ -1,32 +1,45 @@
 :root {
-  --toolbarbutton-icon-fill: var(--lwt-text-color) !important;
-  --gnome-toolbar-icon-fill: var(--lwt-text-color) !important;
-  --gnome-window-color: var(--lwt-text-color) !important;
-  --gnome-menu-background: var(--lwt-accent-color) !important;
-  --gnome-toolbar-background: var(--lwt-accent-color) !important;
-  --gnome-toolbar-border-color: var(--lwt-accent-color) !important;
-  --gnome-accent-bg: var(--lwt-accent-color) !important;
-  --gnome-selection-bg: color-mix(
-    in hsl longer hue,
-    var(--lwt-text-color) 20%,
-    transparent
-  ) !important;
-  --gnome-window-background: var(--lwt-accent-color) !important;
-
-  --gnome-tabbar-tab-active-background: var(--gnome-selection-bg) !important;
-  --gnome-tabbar-tab-hover-background: var(--gnome-selection-bg) !important;
+  --toolbarbutton-icon-fill: var(--lwt-text-color, currentColor) !important;
+  --gnome-toolbar-icon-fill: var(--lwt-text-color, #2f2f2f) !important;
+  --gnome-window-color: var(--lwt-text-color, rgba(0, 0, 0, 0.8)) !important;
+  --gnome-menu-background: var(--lwt-accent-color, #fff) !important;
+  --gnome-headerbar-background: var(--lwt-accent-color, #fff) !important;  
+  --gnome-accent-bg: var(--lwt-accent-color, AccentColor) !important;
+  --gnome-window-background: var(--lwt-accent-color, #fafafa) !important;
+  --gnome-tabbar-tab-active-background: var(--gnome-selection-bg, #f0f0f0) !important;
+  --gnome-tabbar-tab-hover-background: var(--gnome-selection-bg, #f3f3f3) !important;
   --gnome-tabbar-tab-active-hover-background: color-mix(
     in hsl longer hue,
     var(--lwt-text-color) 30%,
     transparent
-  ) !important;
+    ) !important;
+  --gnome-headerbar-shade-color: var(--lwt-accent-color, rgba(0, 0, 0, 0.12)) !important;
 
-  --lwt-transition-duration: 0.2s;
   --lwt-transition-type: ease-out;
 }
 
-* {
-  color: --lwt-tab-text !important;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --toolbarbutton-icon-fill: var(--lwt-text-color, #fff) !important;
+    --gnome-toolbar-icon-fill: var(--lwt-text-color, #eeeeec) !important;
+    --gnome-menu-background: var(--lwt-accent-color, #383838) !important;
+    --gnome-headerbar-background: var(--lwt-accent-color, #303030) !important;  
+    --gnome-window-background: var(--lwt-accent-color, #242424) !important;
+    --gnome-tabbar-tab-active-background: var(--gnome-selection-bg, #2e2e2e) !important;
+    --gnome-tabbar-tab-hover-background: var(--gnome-selection-bg, #2c2c2c) !important;
+    --gnome-headerbar-shade-color: var(--lwt-accent-color, rgba(0, 0, 0, 0.9)) !important;
+    --gnome-trough-background: color-mix(in srgb, var(--lwt-text-color, currentColor) 15%, transparent)
+
+    &:-moz-window-inactive {
+      --gnome-headerbar-background: var(--gnome-window-background) !important;
+      --gnome-tabbar-tab-hover-background: var(--gnome-selection-bg, #3f3f3f) !important;
+      
+    }
+  }
+}
+
+menulist, .customizationmode-button, #nav-bar toolbarbutton:not(#urlbar-zoom-button):not(.subviewbutton):not(.titlebar-button), :root[inFullscreen] .titlebar-button.titlebar-restore, .subviewbutton.panel-subview-footer, .panel-footer button, #downloadsPanel-mainView .download-state .downloadButton, #appMenu-popup .panel-banner-item, #appMenu-popup .toolbaritem-combined-buttons toolbarbutton:not(#appMenu-fxa-label), #context-navigation menuitem, .identity-popup-preferences-button:not(#hack), .findbar-container toolbarbutton, #sidebar-switcher-target, #viewButton, .close-icon:not(.tab-close-button), button.close, .menulist-label-box, .expander-down, .expander-up, .notification-button, #identity-popup-security-expander, .panel-info-button, .panel-button, #PanelUI-panic-view-button, .tracking-protection-button, .dialog-button, .autocomplete-richlistitem[type="loginsFooter"], .dialog-button-box button, .searchbar-engine-one-off-item, .permission-popup-permission-remove-button, .button.connect-device, #item-choose button, #editBMPanel_newFolderButton, .unified-extensions-item-menu-button {
+  color: var(--lwt-text-color, --gnome-window-color) !important;
 }
 
 #navigator-toolbox {
@@ -35,13 +48,13 @@
 
 .toolbarbutton-icon {
   transition-property: opacity !important;
-  transition-duration: var(--lwt-transition-duration) !important;
+  transition-duration: var(--gnome-animation-time) !important;
   transition-timing-function: var(--lwt-transition-type) !important;
 }
 
 #navigator-toolbox {
   transition-property: background-color, border-color !important;
-  transition-duration: var(--lwt-transition-duration) !important;
+  transition-duration: var(--gnome-animation-time) !important;
   transition-timing-function: var(--lwt-transition-type) !important;
 }
 
@@ -53,7 +66,7 @@
     --lwt-accent-color,
     --gnome-headerbar-background
   ) !important;
-  transition: background-color var(--lwt-transition-duration)
+  transition: background-color var(--gnome-animation-time)
     var(--lwt-transition-type) !important;
 }
 

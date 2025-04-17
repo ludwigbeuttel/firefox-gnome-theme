@@ -99,7 +99,7 @@
       border-top-left-radius: 6px;
       box-shadow: -5px 0 0 0 var(--lwt-accent-color);
       transition-property: box-shadow !important;
-      transition-duration: var(--lwt-transition-duration) !important;
+      transition-duration: var(--gnome-animation-time) !important;
       transition-timing-function: var(--lwt-transition-type) !important;
     }
 
