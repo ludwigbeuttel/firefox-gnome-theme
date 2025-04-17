@@ -9,7 +9,8 @@
   }
 
   #sidebar-main {
-    transition: max-width .2s ease-in-out;
+    transition: max-width, background-color !important;
+    transition-duration: var(--gnome-animation-time) !important;
 
     &:not(:has([expanded])) {
       max-width: 47px;
