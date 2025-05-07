@@ -52,7 +52,7 @@
 #tabs-newtab-button,
 #vertical-tabs-newtab-button {
   box-shadow: none !important;
-  transition-property: background-color, outline-color, color, border-color;
+  transition-property: background-color, outline-color, color, border-color, outline-color;
   transition-duration: var(--gnome-animation-time);
 }
 
