@@ -5,20 +5,18 @@
 	--gnome-accent-bg: var(--lwt-accent-color, AccentColor);
 	
     /* Window */
-	--gnome-window-background: var(--lwt-accent-color, #fafafa);
-	--gnome-window-color: var(--lwt-text-color, rgba(0, 0, 0, 0.8))
+	--gnome-window-background: var(--lwt-accent-color, #fafafb);
+	--gnome-window-color: var(--lwt-text-color, rgba(0, 0, 6, 0.8))
 	--gnome-view-background: var(--lwt-accent-color, #ffffff);
-	--gnome-sidebar-background: var(--lwt-accent-color, #ebebeb);
-	--gnome-secondary-sidebar-background: var(--lwt-accent-color, #f3f3f3);
+	--gnome-sidebar-background: var(--lwt-accent-color, #ebebed);
+	--gnome-secondary-sidebar-background: var(--lwt-accent-color, #f3f3f5);
 	
 	/* Card */
 	--gnome-card-background: var(--lwt-accent-color, #ffffff);
-	--gnome-card-shade-color: color-mix(in srgb, black 7%, transparent);
+	--gnome-card-shade-color: color-mix(in srgb, var(--lwt-accent-color, #000006) 7%, transparent);
 	
 	/* Menu */
 	--gnome-menu-background: var(--lwt-accent-color, #ffffff);
-	--gnome-menu-border-color: rgba(0, 0, 0, .04);
-	--gnome-menu-shadow: 0 1px 5px 1px rgba(0,0,0, .09), 0 2px 14px 3px rgba(0,0,0, .05);
 	
 	/* Header bar */
 	--gnome-headerbar-background: var(--lwt-accent-color, #ffffff);
@@ -33,9 +31,6 @@
 	--gnome-tabbar-tab-active-background-contrast: var(--lwt-accent-color, #c0c0c0); /* Hardcoded color */
 	--gnome-tabbar-tab-active-hover-background: var(--lwt-accent-color, #e4e4e4); /* Hardcoded color */
 	
-	/* Miscellaneous */
-	--gnome-shade-color: rgba(0, 0, 0, 0.07);
-
 	/* Text color for Firefox Logo in new private tab */
 	--gnome-private-wordmark: #20123A;
 	/* New private tab background */
@@ -48,8 +43,8 @@
 		--gnome-headerbar-background: var(--gnome-window-background);
 		--gnome-tabbar-tab-hover-background: var(--lwt-accent-color-inactive,  #f3f3f3); /* Hardcoded color */
 		--gnome-tabbar-tab-active-background: var(--lwt-accent-color-inactive, #f0f0f0); /* Hardcoded color */
-		--gnome-sidebar-background: var(--lwt-accent-color-inactive, #f2f2f2); /* Hardcoded color */
-		--gnome-secondary-sidebar-background: var(--lwt-accent-color-inactive, #f6f6f6); /* Hardcoded color */
+		--gnome-sidebar-background: var(--lwt-accent-color-inactive, #f2f2f4); /* Hardcoded color */
+		--gnome-secondary-sidebar-background: var(--lwt-accent-color-inactive, #f6f6fa); /* Hardcoded color */
 	}
 
 	/* Private browsing colors */
