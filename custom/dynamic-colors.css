@@ -1,29 +1,25 @@
 @import "colors/light.css";
 @import "colors/dark.css";
 
-#navigator-toolbox {
-  --toolbar-start-end-padding: 1px;
-}
-
 .toolbarbutton-icon {
   transition-property: opacity !important;
   transition-duration: var(--gnome-animation-time) !important;
 }
 
 #navigator-toolbox {
+  --toolbar-start-end-padding: 1px;
+  --gnome-toolbar-border-color: var(--gnome-toolbar-background) !important;
   transition-property: background-color, border-color !important;
   transition-duration: var(--gnome-animation-time) !important;
 }
 
 #nav-bar,
 #nav-bar .urlbarView-body-outer,
+#nav-bar .search-one-offs,
 .toolbar-items {
   background: unset !important;
-  background-color: var(
-    --lwt-accent-color,
-    --gnome-headerbar-background
-  ) !important;
-  transition: background-color var(--gnome-animation-time) !important;
+  background-color: var(--gnome-headerbar-background) !important;
+  transition: background var(--gnome-animation-time) !important;
 }
 
 #urlbar {
@@ -41,7 +37,7 @@
 
 #sidebar-main,
 #sidebar-box {
-  background-color: var(--lwt-accent-color) !important;
+  background-color: var(--gnome-headerbar-background) !important;
   transition: max-width, background-color !important;
   transition-duration: var(--gnome-animation-time) !important;
 }
@@ -58,4 +54,10 @@
   box-shadow: none !important;
   transition-property: background-color, outline-color, color, border-color;
   transition-duration: var(--gnome-animation-time);
+}
+
+:root[privatebrowsingmode="temporary"] {
+  .tab-background {
+    --tab-selected-outline-color: transparent;
+  }
 }

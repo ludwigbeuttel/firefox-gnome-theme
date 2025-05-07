@@ -49,6 +49,9 @@
 		
 		/* Private browsing colors */
 		&[privatebrowsingmode="temporary"] {
+			--gnome-accent-bg: var(--gnome-palette-purple-5) !important;
+		    /* Headerbar */
+		    --gnome-headerbar-background: var(--gnome-accent-bg) !important;
 			/* Tabs */	
 			--gnome-tabbar-tab-hover-background: #6C438C; /* Hardcoded color */
 			--gnome-tabbar-tab-active-background: #70498F; /* Hardcoded color */

@@ -8,3 +8,9 @@
 .titlebar-buttonbox-container {
   display: none;
 }
+
+.titlebar-buttonbox-container {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+}
