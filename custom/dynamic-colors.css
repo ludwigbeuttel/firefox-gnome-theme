@@ -1,6 +1,3 @@
-@import "colors/light.css";
-@import "colors/dark.css";
-
 .toolbarbutton-icon {
   transition-property: opacity !important;
   transition-duration: var(--gnome-animation-time) !important;
@@ -20,12 +17,6 @@
   background: unset !important;
   background-color: var(--gnome-headerbar-background) !important;
   transition: background var(--gnome-animation-time) !important;
-}
-
-#urlbar {
-  :is(#translations-button, #shopping-sidebar-button, #reader-mode-button) {
-    display: none !important;
-  }
 }
 
 #alltabs-button {
@@ -54,6 +45,10 @@
   box-shadow: none !important;
   transition-property: background-color, outline-color, color, border-color, outline-color;
   transition-duration: var(--gnome-animation-time);
+}
+
+#sidebar-launcher-splitter {
+  transition: background-color var(--gnome-animation-time);
 }
 
 :root[privatebrowsingmode="temporary"] {

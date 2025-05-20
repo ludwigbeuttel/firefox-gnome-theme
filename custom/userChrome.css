@@ -1,5 +1,5 @@
 @import "vertical-tabs.css";
-@import "dynamic-colors.css";
+@import "dynamic-colors.css" screen and -moz-pref("gnomeTheme.extensions.adaptiveTabBarColour");
 
 * {
   font-family: "Inter Variable", "Inter", sans-serif !important;
@@ -12,5 +12,15 @@
 .titlebar-buttonbox-container {
   position: absolute;
   pointer-events: none;
+  opacity: 0;
+}
+
+#urlbar {
+  :is(#translations-button, #shopping-sidebar-button, #reader-mode-button) {
+    display: none !important;
+  }
+}
+
+#sidebar-launcher-splitter {
   opacity: 0;
 }
