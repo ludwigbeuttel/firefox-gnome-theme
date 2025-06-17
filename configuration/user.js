@@ -336,6 +336,6 @@ user_pref("widget.gtk.rounded-bottom-corners.enabled", true);
  */
 
 user_pref("gnomeTheme.hideSingleTab", true);
-user_pref("gnomeTheme.systemIcons", true);
+// user_pref("gnomeTheme.systemIcons", true);
 user_pref("sidebar.revamp", true);
 user_pref("sidebar.verticalTabs", true);
